@@ -1,0 +1,131 @@
+* { box-sizing: border-box; }
+
+body {
+  width: 420px;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #000;
+  color: #e7e9ea;
+}
+
+main { padding: 16px; }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+header p {
+  margin: 4px 0 0;
+  color: #71767b;
+  font-size: 11px;
+}
+
+.top-toggle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  color: #cfd9de;
+  font-size: 10px;
+}
+
+section {
+  margin-top: 12px;
+  border: 1px solid #2f3336;
+  border-radius: 14px;
+  background: #080808;
+  overflow: hidden;
+}
+
+section > label:not(.switch-row) {
+  display: block;
+  padding: 11px 12px;
+  border-bottom: 1px solid #202327;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+section > label:last-child {
+  border-bottom: 0 !important;
+}
+
+textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 8px;
+  border: 1px solid #333639;
+  border-radius: 9px;
+  background: #000;
+  color: #e7e9ea;
+  resize: vertical;
+  font: inherit;
+}
+
+small {
+  display: block;
+  margin-top: 4px;
+  color: #71767b;
+  font-size: 9px;
+  line-height: 1.35;
+  font-weight: 400;
+}
+
+.switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 12px;
+  border-bottom: 1px solid #202327;
+}
+
+.switch-row span { flex: 1; }
+
+.switch-row strong {
+  display: block;
+  font-size: 10px;
+}
+
+.switch-row input,
+.top-toggle input {
+  width: 18px;
+  height: 18px;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 9px 11px;
+  border: 1px solid #536471;
+  border-radius: 999px;
+  background: #16181c;
+  color: #e7e9ea;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button.primary {
+  background: #1d9bf0;
+  border-color: #1d9bf0;
+  color: white;
+}
+
+#status {
+  min-height: 15px;
+  margin: 10px 2px 0;
+  color: #71767b;
+  font-size: 9px;
+}

@@ -1,0 +1,31 @@
+#xkc-counter {
+  position: fixed !important;
+  right: 16px !important;
+  bottom: 16px !important;
+  z-index: 2147483646 !important;
+  padding: 8px 11px !important;
+  border-radius: 999px !important;
+  background: rgba(15, 23, 42, .92) !important;
+  color: white !important;
+  font: 700 11px/1 Arial, sans-serif !important;
+  box-shadow: 0 4px 18px rgba(0,0,0,.24) !important;
+  pointer-events: none !important;
+}
+
+.xkc-hidden-post > *:not(.xkc-placeholder) {
+  display: none !important;
+}
+
+.xkc-placeholder {
+  display: block !important;
+  width: calc(100% - 24px) !important;
+  margin: 10px 12px !important;
+  padding: 10px 12px !important;
+  border: 1px dashed rgba(127,127,127,.45) !important;
+  border-radius: 12px !important;
+  background: rgba(127,127,127,.08) !important;
+  color: inherit !important;
+  font: 500 12px/1.4 Arial, sans-serif !important;
+  text-align: left !important;
+  cursor: pointer !important;
+}

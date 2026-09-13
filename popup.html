@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>X Keyword Cleaner</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>X Keyword Cleaner</h1>
+        <p>Clean your feed locally.</p>
+      </div>
+      <label class="top-toggle">
+        <span>Enabled</span>
+        <input id="enabled" type="checkbox">
+      </label>
+    </header>
+
+    <section>
+      <label>
+        Blocked keywords / phrases
+        <textarea id="blockedKeywords" rows="4" placeholder="crypto&#10;giveaway&#10;spoiler"></textarea>
+        <small>One keyword or phrase per line.</small>
+      </label>
+
+      <label>
+        Blocked accounts
+        <textarea id="blockedAccounts" rows="3" placeholder="@username&#10;another_user"></textarea>
+        <small>Use @handle or handle, one per line.</small>
+      </label>
+
+      <label>
+        Blocked hashtags
+        <textarea id="blockedHashtags" rows="3" placeholder="#politics&#10;trendingtopic"></textarea>
+        <small># is optional.</small>
+      </label>
+    </section>
+
+    <section class="rules">
+      <label class="switch-row">
+        <span><strong>Hide promoted posts</strong><small>Locally hides obvious promoted/sponsored posts.</small></span>
+        <input id="hidePromoted" type="checkbox">
+      </label>
+
+      <label class="switch-row">
+        <span><strong>Hide replies</strong><small>Removes reply-style posts when X exposes reply context.</small></span>
+        <input id="hideReplies" type="checkbox">
+      </label>
+
+      <label class="switch-row">
+        <span><strong>Hide quote posts</strong><small>Hides posts that contain another quoted post/card.</small></span>
+        <input id="hideQuotePosts" type="checkbox">
+      </label>
+
+      <label class="switch-row">
+        <span><strong>Show placeholder</strong><small>Click a placeholder to reveal an individual hidden post.</small></span>
+        <input id="showPlaceholder" type="checkbox">
+      </label>
+
+      <label class="switch-row">
+        <span><strong>Case-sensitive matching</strong><small>Default is case-insensitive.</small></span>
+        <input id="caseSensitive" type="checkbox">
+      </label>
+    </section>
+
+    <div class="actions">
+      <button id="cleanPreset" class="primary">Clean feed preset</button>
+      <button id="reset">Reset</button>
+    </div>
+
+    <p id="status">Settings save automatically.</p>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>
