@@ -1,8 +1,12 @@
 # X Keyword Cleaner
 
-A privacy-first Chrome extension that locally hides unwanted posts on X based on keywords, hashtags, accounts and simple feed rules.
+A privacy-first Chrome extension that locally hides unwanted posts on X based on keywords, hashtags, accounts and feed rules.
 
-It does **not** unfollow, follow, like, repost, block, report, delete or otherwise automate account actions.
+## v1.1.0
+
+- Added optional **repost / retweet filtering** using X social-context labels.
+- Existing keyword, hashtag, account, promoted-post, reply and quote-post filters remain available.
+- The extension still performs no follow, unfollow, like, repost, block, report, delete or other account automation.
 
 ## Features
 
@@ -12,6 +16,7 @@ It does **not** unfollow, follow, like, repost, block, report, delete or otherwi
 - Hide obvious promoted/sponsored posts.
 - Optionally hide replies.
 - Optionally hide quote posts.
+- Optionally hide reposts/retweets.
 - Optional case-sensitive matching.
 - Optional placeholder for each hidden post, allowing one-click reveal.
 - Small on-page counter showing how many posts are hidden.
@@ -22,33 +27,13 @@ It does **not** unfollow, follow, like, repost, block, report, delete or otherwi
 
 ## Privacy
 
-All rules are stored in Chrome extension sync storage.
-
-The extension does not send:
-
-- post text;
-- usernames;
-- browsing history;
-- cookies;
-- authentication tokens;
-- passwords
-
-to any external service.
+All rules are stored in Chrome extension storage. The extension does not send post text, usernames, browsing history, cookies, authentication tokens or passwords to any external service.
 
 ## How it works
 
-The content script watches X's dynamically loaded feed with a `MutationObserver`.
+The content script watches X's dynamically loaded feed and locally evaluates post text, visible author/account links, hashtags, promoted indicators, reply context, quoted-post structure and repost context.
 
-For each visible tweet article, it can evaluate:
-
-- post text;
-- visible author/account links;
-- hashtags;
-- promoted-post indicators;
-- reply context;
-- quoted-post structure.
-
-Matching posts are hidden only in your local browser.
+Matching posts are hidden only in your browser.
 
 ## Install
 
@@ -59,12 +44,6 @@ Matching posts are hidden only in your local browser.
 5. Select this extension folder.
 6. Open X.
 7. Add keywords/accounts/hashtags from the popup.
-
-## Limitations
-
-X frequently changes its DOM structure and localized interface text, so some selectors or promoted/reply detection may need maintenance in later versions.
-
-Account matching uses visible handles/links from the page. It does not call X APIs.
 
 ## Policy / account safety
 
