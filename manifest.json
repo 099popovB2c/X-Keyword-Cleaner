@@ -1,17 +1,22 @@
 {
   "manifest_version": 3,
   "name": "X Keyword Cleaner",
-  "version": "1.1.0",
-  "description": "Locally hide X posts by keywords, hashtags, accounts, reposts and feed rules without automating account actions.",
+  "version": "1.1.1",
+  "description": "Locally filter X posts with stable SPA-aware keyword, account, hashtag, promoted, reply, quote and repost rules.",
   "permissions": ["storage"],
   "host_permissions": ["https://x.com/*", "https://twitter.com/*"],
-  "action": {"default_popup": "popup.html", "default_title": "X Keyword Cleaner"},
-  "content_scripts": [{
-    "matches": ["https://x.com/*", "https://twitter.com/*"],
-    "js": ["content.js", "repost-filter.js"],
-    "css": ["styles.css", "repost-filter.css"],
-    "run_at": "document_idle"
-  }],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "X Keyword Cleaner"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*", "https://twitter.com/*"],
+      "js": ["content-v111.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
   "icons": {"16": "icon16.png", "48": "icon48.png", "128": "icon128.png"},
   "minimum_chrome_version": "111"
 }
